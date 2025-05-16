@@ -1,0 +1,48 @@
+ * {
+    background-color: rgb(0, 0, 0);
+} 
+
+.btn {
+  width: 40vw;
+  height: 40vh;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.btnContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    justify-items: center;
+}
+
+#title {
+    text-align: center;
+    font-size: bold;
+    margin-bottom: 20px;
+    color: white
+}
+
+#desc {
+    text-align: center;
+    font-size: bold;
+    margin-bottom: 20px;
+    color: rgb(255, 0, 0)
+}
+
+#green {
+    background-color: green;
+    opacity: 0.25;
+}
+#red {
+    background-color: red;
+    opacity: 0.25;
+}
+#yellow {
+    background-color: gold;
+    opacity: 0.25;
+}
+#blue {
+    background-color: blue;
+    opacity: 0.25;
+}
