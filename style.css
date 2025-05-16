@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+
+}
+
+.gridBoxes {
+    display: grid;
+    grid-template-columns: repeat(2, 110px);
+    grid-template-rows: repeat(2, 110px);
+    width: max-content;
+}
+
+.boxRed {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 0, 0, 0.5);
+    
+}
+
+.boxBlue {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 255, 0.5);
+    
+}
+
+.boxGreen {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 128, 0, 0.5);
+    
+}
+
+.boxYellow {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 0, 0.5);
+
+}
+
+.gridBoxes p {
+    color: white;
+    text-align: center;
+    padding-top: 25%
+}
