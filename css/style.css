@@ -1,0 +1,40 @@
+.btn {
+    border:  1px solid black;
+    height: 150px;
+    width: 150px;
+    display: inline-flex;
+    margin: 4%;
+    border-radius: 50%;
+}
+
+#blue {
+    background-color: blue;
+    opacity : 30%;
+}
+
+#red {
+    background-color: red;
+    opacity : 30%;
+}
+
+#green {
+    background-color: green;
+    opacity : 30%;
+}
+
+#yellow {
+    background-color: yellow;
+    opacity : 30%;
+}
+
+* {
+    background-color: rgb(37, 37, 37);
+}
+
+#text {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+}
+
+
