@@ -1,0 +1,9 @@
+.titre {
+    border: solid black;
+    margin: 0 auto;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px;
+}
