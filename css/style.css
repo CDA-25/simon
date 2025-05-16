@@ -34,16 +34,16 @@ h1 {
   margin: 20px;
 }
 #green {
-  background-color: green;
+  background-color: rgba(0, 128, 0, 0.425);
 }
 #red {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.425);
 }
 #yellow {
-  background-color: yellow;
+  background-color: rgba(255, 255, 0, 0.425);
 }
 #blue {
-  background-color: blue;
+  background-color: rgba(0, 0, 255, 0.425);
 }
 
 #start {
