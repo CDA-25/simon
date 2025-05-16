@@ -43,14 +43,33 @@ h1 {
 #green {
   background-color: rgba(0, 128, 0, 0.425);
 }
+
+.greenOn {
+  background-color: green;
+}
+
 #red {
   background-color: rgba(255, 0, 0, 0.425);
 }
+
+.redOn {
+  background-color: red;
+}
+
 #yellow {
   background-color: rgba(255, 255, 0, 0.425);
 }
+
+.yellowOn {
+  background-color: yellow;
+}
+
 #blue {
   background-color: rgba(0, 0, 255, 0.425);
+}
+
+.blueOn {
+  background-color: blue;
 }
 
 #start {
