@@ -14,6 +14,10 @@ body {
     width: max-content;
 }
 
+.box {
+    border-radius: 10px;
+}
+
 .boxRed {
     width: 100px;
     height: 100px;
@@ -46,4 +50,17 @@ body {
     color: white;
     text-align: center;
     padding-top: 25%
+}
+
+.btnPlay {
+    background-color: purple;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: flex;
+    font-size: 16px;
+    margin: 25% auto;
+    cursor: pointer;;
 }
