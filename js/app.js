@@ -9,8 +9,14 @@ window.addEventListener("load", function () {
     const btnPlay = document.querySelector(".btnJouer")
     const allContainers = document.querySelectorAll(".container")
 
+    // function cliquer pour jouer
+    btnPlay.addEventListener("click", () => {
+        lockClick()
 
-    //function bloquer le clique
+    })
+
+
+    //functions pour bloquer ou débloquer les cliques ici >>>
     let clickLocked = false
 
     function lockClick() {
@@ -26,12 +32,5 @@ window.addEventListener("load", function () {
             container.classList.remove("no-click")
         })
     }
-
-
-    // function cliquer pour jouer
-    btnPlay.addEventListener("click", () => {
-        lockClick()
-
-    })
 
 })
