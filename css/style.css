@@ -90,7 +90,14 @@ h1 {
 .yellow:hover {
     background-color: yellow;
 }
+
+
 .actif {
     background-color: gray;
     opacity: 0.5;
+}
+
+.no-click {
+    pointer-events: none;
+    opacity : 0.5;
 }
