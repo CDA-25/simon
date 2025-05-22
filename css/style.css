@@ -4,7 +4,7 @@
   box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  background-color: rgb(26, 26, 26);
+  background-color: rgb(31, 31, 31);
   font-family: sans-serif;
   position: relative;
   top: 20%;
@@ -38,37 +38,30 @@ h1 {
   cursor: pointer;
   display: inline-block;
   border-radius: 10px;
+  opacity: 0.5;
   margin: 20px;
 }
-#green {
-  background-color: rgba(0, 128, 0, 0.425);
+
+.game-button.active {
+  opacity: 1;
+  filter: brightness(1.5);
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.7);
+  transition: filter 0.3s ease, box-shadow 0.3s ease;
 }
 
-.greenOn {
+#green {
   background-color: green;
 }
 
 #red {
-  background-color: rgba(255, 0, 0, 0.425);
-}
-
-.redOn {
   background-color: red;
 }
 
 #yellow {
-  background-color: rgba(255, 255, 0, 0.425);
-}
-
-.yellowOn {
   background-color: yellow;
 }
 
 #blue {
-  background-color: rgba(0, 0, 255, 0.425);
-}
-
-.blueOn {
   background-color: blue;
 }
 
