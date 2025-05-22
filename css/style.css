@@ -46,3 +46,39 @@
     background-color: blue;
     opacity: 0.25;
 }
+
+#start {
+    position: absolute;
+    margin-left: 45.1%;
+    margin-top: 20%;
+    border: 2px solid white;
+    padding: 22px 60px;
+    border-radius: 15px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+#start:hover {
+    background-color: rgb(255, 0, 0);
+
+}
+#score {
+    position: absolute;
+    margin-left: 46.5%;
+    margin-top: 10%;
+    border-radius: 15px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#bravo{
+    position: absolute;
+    margin-left: 46.9%;
+    margin-top: 15%;
+    border-radius: 15px;
+    color: red;
+    font-size: 35px;
+    font-weight: bold;
+}
