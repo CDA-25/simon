@@ -12,38 +12,7 @@ body {
     grid-template-columns: repeat(2, 110px);
     grid-template-rows: repeat(2, 110px);
     width: max-content;
-}
-
-.box {
-    border-radius: 10px;
-}
-
-.boxRed {
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 0, 0, 0.5);
-    
-}
-
-.boxBlue {
-    width: 100px;
-    height: 100px;
-    background-color: rgba(0, 0, 255, 0.5);
-    
-}
-
-.boxGreen {
-    width: 100px;
-    height: 100px;
-    background-color: rgba(0, 128, 0, 0.5);
-    
-}
-
-.boxYellow {
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255, 255, 0, 0.5);
-
+    margin-left: 10%;
 }
 
 .gridBoxes p {
@@ -52,7 +21,43 @@ body {
     padding-top: 25%
 }
 
-.btnPlay {
+.gridBoxesDark p {
+    color: black;
+    text-align: center;
+    padding-top: 25%
+}
+
+.box {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.boxRed {
+    background-color: red;
+    opacity: 30%;
+}
+
+.boxBlue {
+    background-color:blue  ;
+    opacity: 30%;
+}
+
+.boxGreen {
+    background-color: green;
+    opacity: 30%;
+}
+
+.boxYellow {
+    background-color: yellow;
+    opacity: 30%;
+}
+
+.box.lighted {
+    opacity: 1;
+}
+
+#btnPlay {
     background-color: purple;
     border: none;
     border-radius: 10px;
@@ -63,4 +68,10 @@ body {
     font-size: 16px;
     margin: 25% auto;
     cursor: pointer;;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 50px;
 }

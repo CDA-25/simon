@@ -11,23 +11,27 @@
 
 <body>
     <main>
+        <h1>Simon Say's</h1>
+        <button id="btnPlay">Play</button>
 
-        <button class="btnPlay">Play</button>
+        <div id="score">Score: 0</div>
+        <div id="timer">Temps restant: 5s</div>
+        <div id="messageBox"></div>
 
-        <div class="gridBoxes">
-            <div class="box boxRed boxRedLighted">
+        <div class="gridBoxes gridBoxesDark">
+            <div class="box boxRed" data-color="Red">
                 <p>Red</p>
             </div>
 
-            <div class="box boxBlue boxBlueLighted">
+            <div class="box boxBlue" data-color="Blue">
                 <p>Blue</p>
             </div>
 
-            <div class="box boxGreen boxGreenLighted">
+            <div class="box boxGreen" data-color="Green">
                 <p>Green</p>
             </div>
 
-            <div class="box boxYellow boxYellowLighted">
+            <div class="box boxYellow" data-color="Yellow">
                 <p>Yellow</p>
             </div>
         </div>
