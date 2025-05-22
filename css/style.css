@@ -32,6 +32,11 @@ h1 {
   background-color: rgb(37, 90, 61);
 }
 
+.containerScore {
+display: flex;
+justify-content: center;
+}
+
 .msgActifPlayer {
   text-align: center;
   margin: 1em;
@@ -67,49 +72,54 @@ h1 {
   border-top-left-radius: 40px;
 }
 
-.red:hover {
+/* .red:hover {
   background-color: red;
   border: none;
   box-shadow: inset 0px 2px 8px black;
   box-sizing: border-box;
-}
+} */
 
 .green {
   background-color: rgb(120, 252, 87);
   border-top-right-radius: 40px;
 }
 
-.green:hover {
+/* .green:hover {
   background-color: green;
   border: none;
   box-shadow: inset 0px 2px 8px black;
   box-sizing: border-box;
-}
+} */
 
 .blue {
   background-color: rgb(102, 191, 250);
   border-bottom-left-radius: 40px;
 }
 
-.blue:hover {
+/* .blue:hover {
   background-color: blue;
   border: none;
   box-shadow: inset 0px 2px 8px black;
   box-sizing: border-box;
-}
+} */
 
 .yellow {
   background-color: rgb(235, 226, 103);
   border-bottom-right-radius: 40px;
 }
 
-.yellow:hover {
+/* .yellow:hover {
   background-color: yellow;
   border: none;
   box-shadow: inset 0px 2px 8px black;
   box-sizing: border-box;
-}
+} */
 .actif {
-  background-color: gray;
+  background-color: rgba(128, 128, 128, 0.144);
   transform: scale(1.05);
+}
+
+.no-click {
+  pointer-events: none;
+  
 }

@@ -1,105 +1,124 @@
-// faire avec getelementbyId et ajouter id dans le html au lieu d'une classe pour voir si ça marche
-
 window.addEventListener('load', function () {
-const tiles = document.querySelectorAll(".blue, .green, .yellow, .red");
-const btnPlay = document.querySelector('.btnJouer');
-const message = document.querySelector('.msgActifPlayer')
-  
-const colors = ['red', 'blue', 'green', 'yellow']; // Je crée mon tab de couleur
-  let iaSequence = [];
-  let playerSequence = [];
-  let gameActive = false;
+  const tiles = document.querySelectorAll(".blue, .green, .yellow, .red")
+  const btnPlay = document.querySelector('.btnJouer')
+  const message = document.querySelector('.msgActifPlayer')
+  const allContainers = document.querySelectorAll(".container")
+  let delai
+
+  const colors = ['red', 'blue', 'green', 'yellow']
+  let iaSequence = []
+  let playerSequence = []
+  let gameActive = false
+  let score = 0;
 
   // Démarre une nouvelle partie en réinitialisant les séquences et en générant une nouvelle séquence
-  function startGame(){
-    iaSequence=[];
-    playerSequence= [];
+  function startGame() {
+    iaSequence = [];
+    playerSequence = [];
     gameActive = true;
-    message.textContent='Simon says : Suivez la séquence !';
+    message.textContent = 'Simon says : Suivez la séquence !';
     generateSequence();
   }
 
   // Génère un ajout aléatoire à la séquence.
-  function generateSequence(){
+  function generateSequence() {
     iaSequence.push(getRandomColor(colors));
     displaySequence();
   }
 
+  // Fonction pour avoir une couleur aléatoire
+  function getRandomColor(colors) {
+    const index = Math.floor(Math.random() * colors.length);
+    const color = colors[index];
+    return color;
+  }
   // Affiche la séquence en la faisant clignoter
-  function displaySequence(){
-    let i=0;
-    const interval= setInterval(function(){
+  function displaySequence() {
+    let i = 0;
+    const interval = setInterval(function () {
       highlightTile(iaSequence[i]);
       i++;
 
-      if(i>=iaSequence.length){
+      if (i >= iaSequence.length) {
         clearInterval(interval);
-        message.textContent="A ton tour !";
+        message.textContent = "A ton tour !";
       }
     }, 1000);
   }
 
   // Fait clignoter un bouton
-  function highlightTile(color){
+  function highlightTile(color) {
     const button = document.querySelector(`.${color}`);
     button.classList.add('actif');
-    setTimeout(function(){
+    setTimeout(function () {
       button.classList.remove('actif')
     }, 500);
   }
-  
+
   // Vérifie si la séquence du joueur est correcte
-  function checkPlayerSequence(){
+  function checkPlayerSequence() {
+    unlockClick();
+    clearTimeout(delai)
     const eachClickIndex = playerSequence.length - 1;
     // Si on met cette ligne, ça vérifie juste à la fin de la séquence
     // if(playerSequence.length!==iaSequence.length)
     // Là on vérifie à chaque click
-    if(playerSequence[eachClickIndex] !== iaSequence[eachClickIndex]) {
+    if (playerSequence[eachClickIndex] !== iaSequence[eachClickIndex]) {
       endGame();
-    } else {
-      if(playerSequence.length === iaSequence.length) {
-        message.textContent = 'Bien joué !';
-        playerSequence=[];
+    }
+    if (playerSequence.length === iaSequence.length) {
+      message.textContent = 'Bien joué !';
+      playerSequence = [];
+      score += 1;
 
-        setTimeout(function(){
-          generateSequence();
-        }, 500);
-      }
+      setTimeout(function () {
+        generateSequence();
+      }, 1000);
+    } else {
+      delai = setTimeout(function () { endGame(); }, 5000);
     }
   }
   // Termine le jeu si le joueur fait une erreur
-  function endGame(){
-    gameActive=false;
-    message.textContent='Dommage, c\'est perdu.';
+  function endGame() {
+    gameActive = false;
+    message.textContent = 'Dommage, c\'est perdu.' + 'Votre score est de :' + score;
   }
 
-  // Fonction pour avoir une couleur aléatoire
-  function getRandomColor(colors) {
-    // math.round serait plus imprévisible, math.floor on est sûr que ca arrondie vers le bas
-    const index = Math.floor(Math.random() * colors.length);
-    const color = colors[index];
-    return color;
-  }
 
   tiles.forEach(tile => {
-    tile.addEventListener('click', function(){
-      if(gameActive){
+    tile.addEventListener('click', function () {
+      if (gameActive) {
         // récupère la couleur du bouton cliqué
-        const color=tile.classList[0];
+        const color = tile.classList[1];
         playerSequence.push(color);
         highlightTile(color);
         checkPlayerSequence();
       }
     });
   });
-  
-  btnPlay.addEventListener('click', function (){
-    if(!gameActive){
+
+  btnPlay.addEventListener('click', function () {
+    if (!gameActive) {
       startGame();
     }
   });
 
-  //btnPlay.addEventListener('click', startGame());
+  // fonction bloqué et débloquer les cliques >>>
+
+  function lockClick() {
+    clickLocked = true
+    allContainers.forEach(container => {
+      container.classList.add("no-click")
+    })
+  }
+
+  function unlockClick() {
+    clickLocked = false
+    allContainers.forEach(container => {
+      container.classList.remove("no-click")
+    })
+  }
+
 });
 
 
