@@ -5,6 +5,7 @@ let playerPlay = [];
 let score = 0;
 let gameOver = false;
 let canClick = false;
+let inactivityTimer; // Variable pour le timer d'inactivité
 
 // Récupération des éléments DOM pour chaque couleur
 const green = document.getElementById("green");
@@ -58,6 +59,18 @@ function updateScore() {
   document.getElementById("score").textContent = "Score: " + score;
 }
 
+// Fonction pour réinitialiser le timer d'inactivité
+function resetInactivityTimer() {
+  clearTimeout(inactivityTimer);
+  inactivityTimer = setTimeout(() => {
+    if (canClick) {
+      gameOver = true;
+      canClick = false;
+      document.getElementById("score").textContent = "Game Over! oups ta trop glané. Score: " + score;
+    }
+  }, 5000); // 5 secondes d'inactivité
+}
+
 // Fonction pour démarrer le jeu
 function startGame() {
   simonPlay = []; 
@@ -66,6 +79,7 @@ function startGame() {
   gameOver = false; 
   canClick = false; 
   updateScore(); // Mise à jour du score affiché
+  resetInactivityTimer(); // Démarrage du timer d'inactivité
   nextRound(); // Lancement du premier tour
 }
 
@@ -76,6 +90,7 @@ function nextRound() {
   const nextColor = couleurAleatoire(); 
   simonPlay.push(nextColor); 
   playSimonSequence(); // Lecture de la séquence de Simon
+  resetInactivityTimer(); // Réinitialisation du timer pour le nouveau tour
 }
 
 // Fonction pour jouer la séquence de Simon
@@ -94,6 +109,7 @@ function playSimonSequence() {
 // Fonction pour gérer les clics du joueur
 function playerSequence(color) {
   if (!canClick) return; 
+  resetInactivityTimer(); // Réinitialisation du timer à chaque clic
   // Ignorer les clics si ce n'est pas autorisé
 
   playerPlay.push(color); // Ajout de la couleur cliquée à la séquence du joueur
