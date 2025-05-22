@@ -94,3 +94,8 @@ h1 {
     background-color: gray;
     opacity: 0.5;
 }
+
+.no-click {
+    pointer-events: none;
+    opacity : 0.5;
+}
