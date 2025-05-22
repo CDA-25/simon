@@ -4,12 +4,19 @@
 }
 
 body {
-    background-color: beige;
+        background-color: rgb(255, 255, 255);
 }
 
 h1 {
     text-align: center;
     margin: 1em;
+}
+
+.zoneDeJeu {
+    border-radius: 25%;
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
 }
 
 .btnJouer {
@@ -28,6 +35,10 @@ h1 {
 .msgActifPlayer {
     text-align: center;
     margin: 1em;
+    padding: 1em;
+    font-size: 2rem;
+    color : orange;
+    font-family: sans-serif
 }
 
 .container1 {
@@ -37,6 +48,7 @@ h1 {
     width: 100%;
     height: 400px;
     margin: 20px;
+    padding: 0;
     gap: 30px;
 }
 
@@ -60,8 +72,13 @@ h1 {
     border-top-left-radius: 40px; 
 }
 
-.red:hover {
+/* .red:hover {
     background-color: red;
+} */
+
+.redActif {
+    background-color: #ff0000;
+    border-top-left-radius: 40px; 
 }
 
 .green {
@@ -69,8 +86,13 @@ h1 {
     border-top-right-radius: 40px;
 }
 
-.green:hover {
+/* .green:hover {
+    background-color: #008000;
+} */
+
+.greenActif {
     background-color: green;
+    border-top-right-radius: 40px;
 }
 
 .blue {
@@ -78,8 +100,13 @@ h1 {
     border-bottom-left-radius: 40px;
 }
 
-.blue:hover {
+/* .blue:hover {
+    background-color: #0000ff;
+} */
+
+.blueActif {
     background-color: blue;
+    border-bottom-left-radius: 40px;
 }
 
 .yellow {
@@ -87,8 +114,13 @@ h1 {
     border-bottom-right-radius: 40px
 }
 
-.yellow:hover {
+/* .yellow:hover {
+    background-color: #ffff00;
+} */
+
+.yellowActif {
     background-color: yellow;
+    border-bottom-right-radius: 40px
 }
 
 
