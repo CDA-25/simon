@@ -1,21 +1,34 @@
-const couleur = ["vert", "rouge", "jaune", "bleu"];
+const colors = ["green", "red", "yellow", "blue"];
+let simonPlay = [];
+let playerPlay = [];
+let score = 0;
+let gameOver = false;
+let canClick = false;
 
-let simonTurn = [];
-let playerTurn = [];
+const green = document.getElementById("green");
+const red = document.getElementById("red");
+const yellow = document.getElementById("yellow");
+const blue = document.getElementById("blue");
 
-window.addEventListener("load", function () {
-  const greenBtn = document.querySelector("#green");
-  const greenBtnOn = document.querySelector(".greenOn");
+function couleurAleatoire() {
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+console.log(couleurAleatoire());
 
-  greenBtn.addEventListener("click", function () {
-    const active = greenBtnOn.className;
-    if (active === "rgba(0, 128, 0, 0.425)") {
-      greenBtnOn.classList.add("green");
-      greenBtn.classList.add("rgba(0, 128, 0, 0.425)");
-    }
-    if (active === "rgba(0, 128, 0, 0.425)") {
-      greenBtnOn.classList.add("green");
-      greenBtnOn.classList.add("rgba(0, 128, 0, 0.425)");
-    }
-  });
-});
+function simonSequence() {
+  simonPlay.push(couleurAleatoire());
+  return simonPlay;
+}
+console.log(simonSequence());
+
+function buttonActive(color) {
+  buttons[color].classList.add("active");
+
+  setTimeout(() => {
+    buttons[color].classList.remove("active");
+  }, 500);
+}
+
+function playerSequence() {}
+
+function startGame() {}
